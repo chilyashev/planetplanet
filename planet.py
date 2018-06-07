@@ -140,7 +140,7 @@ def main():
         except:
             log.warning("Feed timeout set to invalid value '%s', skipping", feed_timeout)
             feed_timeout = None
-
+    '''
     if feed_timeout and not offline:
         try:
             from planet import timeoutsocket
@@ -154,7 +154,7 @@ def main():
                 log.debug("Socket timeout set to %d seconds", feed_timeout)
             else:
                 log.error("Unable to set timeout to %d seconds", feed_timeout)
-
+    '''
     # run the planet
     my_planet = planet.Planet(config)
     my_planet.run(planet_name, planet_link, template_files, offline)
